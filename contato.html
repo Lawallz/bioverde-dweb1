@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- BioVerde Organics - contato.html
+     Finalidade: contato e localização: formulário simples e informações da loja -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fale com a BioVerde Organics: formulário de contato, telefone, e-mail e endereço.">
+  <title>BioVerde Organics | Contato</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo.png" alt="Logotipo da BioVerde Organics" width="40" height="40">
+        <strong>BioVerde</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul id="menu" class="navbar-nav collapse navbar-collapse justify-content-end">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="tabela-precos.html">Preços</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="destaque container py-5">
+      <h1 class="mb-2">Fale com a gente</h1>
+      <p class="mb-4">Tem dúvidas sobre produtos, entregas ou parcerias? Envie uma mensagem.</p>
+
+      <section class="row g-5">
+        <article class="col-lg-7">
+          <h2>Envie sua mensagem</h2>
+          <form id="form-contato" class="form-bio" novalidate>
+            <p>
+              <label for="contato-nome" class="form-label">Nome completo</label>
+              <input type="text" id="contato-nome" name="nome" class="form-control" placeholder="Seu nome" autocomplete="name" required>
+              <small id="erro-contato-nome" class="invalid-feedback"></small>
+            </p>
+            <p>
+              <label for="contato-email" class="form-label">E-mail</label>
+              <input type="email" id="contato-email" name="email" class="form-control" placeholder="voce@exemplo.com" autocomplete="email" required>
+              <small id="erro-contato-email" class="invalid-feedback"></small>
+            </p>
+            <p>
+              <label for="contato-assunto" class="form-label">Assunto</label>
+              <select id="contato-assunto" name="assunto" class="form-select" required>
+                <option value="">Selecione...</option>
+                <option value="duvida">Dúvida sobre produtos</option>
+                <option value="entrega">Entrega</option>
+                <option value="parceria">Ser produtor parceiro</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+              <small id="erro-contato-assunto" class="invalid-feedback"></small>
+            </p>
+            <p>
+              <label for="contato-mensagem" class="form-label">Mensagem</label>
+              <textarea id="contato-mensagem" name="mensagem" class="form-control" rows="5" placeholder="Escreva aqui..." required></textarea>
+              <small id="erro-contato-mensagem" class="invalid-feedback"></small>
+            </p>
+            <button type="submit" class="btn-cta btn">Enviar mensagem</button>
+          </form>
+        </article>
+
+        <aside class="col-lg-5">
+          <h2>Onde estamos</h2>
+          <address>
+            <p><strong>BioVerde Organics</strong><br>Rua das Hortênsias, 120 - Centro<br>São Bernardo do Campo - SP, 09710-000</p>
+            <p>Telefone: (11) 4000-0000<br>E-mail: contato@bioverde.example</p>
+          </address>
+          <h3>Horário de atendimento</h3>
+          <ul class="list-unstyled">
+            <li>Segunda a sexta: 8h às 18h</li>
+            <li>Sábado: 8h às 13h</li>
+            <li>Domingo: fechado</li>
+          </ul>
+          <p><small>Endereço fictício, apenas para o trabalho acadêmico.</small></p>
+        </aside>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <section class="container">
+      <section class="row g-4">
+        <article class="col-md-4">
+          <h2>BioVerde Organics</h2>
+          <p>Alimentos orgânicos direto de produtores parceiros. Projeto acadêmico fictício - IFSP, DWE1.</p>
+        </article>
+        <nav class="col-md-4" aria-label="Links do rodapé">
+          <h2>Páginas</h2>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="tabela-precos.html">Preços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="col-md-4">
+          <h2>Fale conosco</h2>
+          <p>contato@bioverde.example<br>(11) 4000-0000</p>
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" aria-label="Instagram da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.8.2-1.2 1.3-1.2H17V2h-2.7C11.4 2 10 3.6 10 6v2H8v3.3h2V22h4v-10.7h2.6L17 8h-3z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </address>
+      </section>
+      <p class="text-center mb-0"><small>&copy; 2026 BioVerde Organics. Trabalho acadêmico, sem fins comerciais.</small></p>
+    </section>
+  </footer>
+
+  <button id="btn-topo" type="button" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>

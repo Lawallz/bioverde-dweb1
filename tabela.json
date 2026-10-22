@@ -1,0 +1,86 @@
+[
+  {
+    "nome": "Morango",
+    "categoria": "Frutas",
+    "preco": 12.9,
+    "unidade": "bandeja",
+    "origem": "Ibiúna - SP"
+  },
+  {
+    "nome": "Banana-prata",
+    "categoria": "Frutas",
+    "preco": 6.5,
+    "unidade": "kg",
+    "origem": "Registro - SP"
+  },
+  {
+    "nome": "Alface crespa",
+    "categoria": "Verduras",
+    "preco": 4.5,
+    "unidade": "maço",
+    "origem": "Mogi das Cruzes - SP"
+  },
+  {
+    "nome": "Couve manteiga",
+    "categoria": "Verduras",
+    "preco": 5.0,
+    "unidade": "maço",
+    "origem": "Mogi das Cruzes - SP"
+  },
+  {
+    "nome": "Cenoura",
+    "categoria": "Legumes",
+    "preco": 7.9,
+    "unidade": "kg",
+    "origem": "Piedade - SP"
+  },
+  {
+    "nome": "Tomate",
+    "categoria": "Legumes",
+    "preco": 9.8,
+    "unidade": "kg",
+    "origem": "Sorocaba - SP"
+  },
+  {
+    "nome": "Arroz integral",
+    "categoria": "Grãos",
+    "preco": 11.9,
+    "unidade": "kg",
+    "origem": "Itaqui - RS"
+  },
+  {
+    "nome": "Feijão carioca",
+    "categoria": "Grãos",
+    "preco": 10.5,
+    "unidade": "kg",
+    "origem": "Itapeva - SP"
+  },
+  {
+    "nome": "Queijo minas",
+    "categoria": "Laticínios",
+    "preco": 34.0,
+    "unidade": "peça",
+    "origem": "Serro - MG"
+  },
+  {
+    "nome": "Iogurte natural",
+    "categoria": "Laticínios",
+    "preco": 8.9,
+    "unidade": "500 g",
+    "origem": "Serro - MG"
+  },
+  {
+    "nome": "Suco de laranja",
+    "categoria": "Bebidas",
+    "preco": 14.0,
+    "unidade": "litro",
+    "origem": "Limeira - SP"
+  },
+  {
+    "nome": "Chá de hortelã",
+    "categoria": "Bebidas",
+    "preco": 9.5,
+    "unidade": "40 g",
+    "origem": "Ibiúna - SP"
+  }
+]

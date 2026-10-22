@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- BioVerde Organics - cadastro.html
+     Finalidade: formulário de cadastro com 8+ tipos de campo, validado por JavaScript (scripts.js) e confirmação em modal -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cadastre-se na BioVerde Organics e receba produtos orgânicos em casa.">
+  <title>BioVerde Organics | Cadastro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo.png" alt="Logotipo da BioVerde Organics" width="40" height="40">
+        <strong>BioVerde</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul id="menu" class="navbar-nav collapse navbar-collapse justify-content-end">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="tabela-precos.html">Preços</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="destaque container py-5">
+      <h1 class="mb-2">Cadastro de cliente</h1>
+      <p class="mb-4">Preencha os dados para receber nossas ofertas e montar sua cesta semanal. Os dados não são enviados a nenhum servidor.</p>
+
+      <form id="form-cadastro" class="form-bio row g-3" novalidate>
+      <p class="col-md-6">
+        <label for="cadastro-nome" class="form-label">Nome completo</label>
+        <input type="text" id="cadastro-nome" name="nome" class="form-control" placeholder="Seu nome" autocomplete="name" required>
+        <small id="erro-cadastro-nome" class="invalid-feedback"></small>
+      </p>
+      <p class="col-md-6">
+        <label for="cadastro-email" class="form-label">E-mail</label>
+        <input type="email" id="cadastro-email" name="email" class="form-control" placeholder="voce@exemplo.com" autocomplete="email" required>
+        <small id="erro-cadastro-email" class="invalid-feedback"></small>
+      </p>
+      <p class="col-md-6">
+        <label for="cadastro-senha" class="form-label">Senha (mínimo 8 caracteres)</label>
+        <input type="password" id="cadastro-senha" name="senha" class="form-control" placeholder="Crie uma senha" autocomplete="new-password" required>
+        <small id="erro-cadastro-senha" class="invalid-feedback"></small>
+      </p>
+      <p class="col-md-6">
+        <label for="cadastro-telefone" class="form-label">Telefone</label>
+        <input type="tel" id="cadastro-telefone" name="telefone" class="form-control" placeholder="(11) 91234-5678" maxlength="15" autocomplete="tel" required>
+        <small id="erro-cadastro-telefone" class="invalid-feedback"></small>
+      </p>
+      <p class="col-md-6">
+        <label for="cadastro-nascimento" class="form-label">Data de nascimento</label>
+        <input type="date" id="cadastro-nascimento" name="nascimento" class="form-control" autocomplete="bday" required>
+        <small id="erro-cadastro-nascimento" class="invalid-feedback"></small>
+      </p>
+      <p class="col-md-6">
+        <label for="cadastro-quantidade" class="form-label">Pessoas na sua casa</label>
+        <input type="number" id="cadastro-quantidade" name="quantidade" class="form-control" min="1" max="10" value="1" required>
+        <small id="erro-cadastro-quantidade" class="invalid-feedback"></small>
+      </p>
+
+      <p class="col-md-6">
+        <label for="cadastro-estado" class="form-label">Estado</label>
+        <select id="cadastro-estado" name="estado" class="form-select" required>
+          <option value="">Selecione...</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="PR">Paraná</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="BA">Bahia</option>
+        </select>
+        <small id="erro-cadastro-estado" class="invalid-feedback"></small>
+      </p>
+
+      <p class="col-md-6">
+        <label for="cadastro-frequencia" class="form-label">Compras por mês: <output id="cadastro-frequencia-valor" for="cadastro-frequencia">2</output></label>
+        <input type="range" id="cadastro-frequencia" name="frequencia" class="form-range" min="1" max="4" step="1" value="2">
+        <small id="erro-cadastro-frequencia" class="invalid-feedback"></small>
+      </p>
+
+      <fieldset id="cadastro-entrega-grupo" class="col-md-6">
+        <legend class="fs-6">Preferência de entrega</legend>
+          <p class="form-check">
+            <input type="radio" id="cadastro-entrega-casa" name="entrega" value="casa" class="form-check-input">
+            <label for="cadastro-entrega-casa" class="form-check-label">Entrega em casa</label>
+          </p>
+          <p class="form-check">
+            <input type="radio" id="cadastro-entrega-retirada" name="entrega" value="retirada" class="form-check-input">
+            <label for="cadastro-entrega-retirada" class="form-check-label">Retirar na loja</label>
+          </p>
+          <p class="form-check">
+            <input type="radio" id="cadastro-entrega-ponto" name="entrega" value="ponto" class="form-check-input">
+            <label for="cadastro-entrega-ponto" class="form-check-label">Ponto de coleta</label>
+          </p>
+        <small id="erro-cadastro-entrega" class="invalid-feedback"></small>
+      </fieldset>
+
+      <fieldset id="cadastro-categorias-grupo" class="col-md-6">
+        <legend class="fs-6">Categorias de interesse</legend>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-frutas" name="categorias" value="frutas" class="form-check-input">
+            <label for="cadastro-cat-frutas" class="form-check-label">Frutas</label>
+          </p>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-verduras" name="categorias" value="verduras" class="form-check-input">
+            <label for="cadastro-cat-verduras" class="form-check-label">Verduras</label>
+          </p>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-legumes" name="categorias" value="legumes" class="form-check-input">
+            <label for="cadastro-cat-legumes" class="form-check-label">Legumes</label>
+          </p>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-graos" name="categorias" value="graos" class="form-check-input">
+            <label for="cadastro-cat-graos" class="form-check-label">Grãos</label>
+          </p>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-laticinios" name="categorias" value="laticinios" class="form-check-input">
+            <label for="cadastro-cat-laticinios" class="form-check-label">Laticínios</label>
+          </p>
+          <p class="form-check">
+            <input type="checkbox" id="cadastro-cat-bebidas" name="categorias" value="bebidas" class="form-check-input">
+            <label for="cadastro-cat-bebidas" class="form-check-label">Bebidas</label>
+          </p>
+        <small id="erro-cadastro-categorias" class="invalid-feedback"></small>
+      </fieldset>
+
+      <p class="col-12">
+        <label for="cadastro-observacoes" class="form-label">Observações (opcional, até 200 caracteres)</label>
+        <textarea id="cadastro-observacoes" name="observacoes" class="form-control" rows="3" placeholder="Alguma restrição alimentar ou pedido especial?"></textarea>
+        <small id="erro-cadastro-observacoes" class="invalid-feedback"></small>
+      </p>
+
+      <p class="col-12 form-check ms-1">
+        <input type="checkbox" id="cadastro-termos" name="termos" class="form-check-input">
+        <label for="cadastro-termos" class="form-check-label">Li e aceito os termos de uso e a política de privacidade.</label>
+        <small id="erro-cadastro-termos" class="invalid-feedback"></small>
+      </p>
+
+      <p class="col-12 d-flex gap-2">
+        <button type="submit" id="btn-enviar" class="btn-cta btn">Enviar</button>
+        <button type="reset" id="btn-limpar" class="btn btn-outline-success">Limpar</button>
+      </p>
+      </form>
+
+      <section id="modal-confirmacao" class="modal fade" tabindex="-1" aria-labelledby="modal-titulo" aria-hidden="true">
+        <article class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <section class="modal-content">
+            <header class="modal-header">
+              <h2 id="modal-titulo" class="modal-title fs-5">Cadastro recebido!</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </header>
+            <section class="modal-body">
+              <p>Confira os dados informados (simulação: nada foi enviado).</p>
+              <section id="dados-confirmacao"></section>
+            </section>
+            <footer class="modal-footer">
+              <button type="button" class="btn-cta btn" data-bs-dismiss="modal">Fechar</button>
+            </footer>
+          </section>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <section class="container">
+      <section class="row g-4">
+        <article class="col-md-4">
+          <h2>BioVerde Organics</h2>
+          <p>Alimentos orgânicos direto de produtores parceiros. Projeto acadêmico fictício - IFSP, DWE1.</p>
+        </article>
+        <nav class="col-md-4" aria-label="Links do rodapé">
+          <h2>Páginas</h2>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="tabela-precos.html">Preços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="col-md-4">
+          <h2>Fale conosco</h2>
+          <p>contato@bioverde.example<br>(11) 4000-0000</p>
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" aria-label="Instagram da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.8.2-1.2 1.3-1.2H17V2h-2.7C11.4 2 10 3.6 10 6v2H8v3.3h2V22h4v-10.7h2.6L17 8h-3z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </address>
+      </section>
+      <p class="text-center mb-0"><small>&copy; 2026 BioVerde Organics. Trabalho acadêmico, sem fins comerciais.</small></p>
+    </section>
+  </footer>
+
+  <button id="btn-topo" type="button" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>
