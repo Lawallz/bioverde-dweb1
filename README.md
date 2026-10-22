@@ -46,7 +46,7 @@ O GitHub não substitui o Moodle. O enunciado exige ZIP/RAR de até 10 MB com um
 - Final: **18/11/2026, até 23:59**, projeto completo.
 - Apresentação: **19/11/2026, a partir das 19h**, até 15 minutos.
 
-O enunciado pede três alunos; o documento recebido lista quatro. Os nomes foram preservados. Confiram a composição com o professor e ajustem a capa e o nome do ZIP antes de enviar. Use o prefixo `ProjetoIntDWE1_` ou `ProjetoFinalDWE1_`, seguido dos nomes e sobrenomes em ordem alfabética, conforme o enunciado.
+O grupo está confirmado com quatro integrantes: Alexander Felipe Duarte Narcizo, Deborah Crystine Ramallo Guimarães, Letícia Oliveira de Jesus e Victoria Lima dos Santos. Os quatro nomes constam na capa do documento. Use o prefixo `ProjetoIntDWE1_` ou `ProjetoFinalDWE1_`, seguido dos nomes e sobrenomes em ordem alfabética, conforme o enunciado.
 
 ## Dependências e licenças
 
