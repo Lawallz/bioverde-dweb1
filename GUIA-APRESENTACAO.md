@@ -1,6 +1,6 @@
 # O que todos do grupo precisam saber
 
-Cada integrante deve conseguir explicar o projeto inteiro e demonstrar os recursos básicos, mesmo que tenha trabalhado mais em uma parte.
+Vcs devem conseguir explicar o projeto inteiro e demonstrar os recursos básicos, mesmo que tenham trabalhado mais em uma parte.
 
 ## A proposta em 30 segundos
 
