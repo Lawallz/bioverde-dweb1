@@ -69,6 +69,102 @@ Na aba Network do navegador, a página de preços deve mostrar `scripts.js` e `t
 3. Código (5 min): semântica, seletores CSS, responsividade, validação, modal e Fetch.
 4. Perguntas (3 min).
 
+1. Alexander: apresentação e documento — 3 minutos
+
+Na tela: abrir doc/projeto.pdf.
+“Boa noite! Nosso grupo é formado por Alexander, Deborah, Letícia e Victoria. Desenvolvemos a BioVerde Organics, um site fictício de comércio de produtos orgânicos para a disciplina DWE1.”
+
+“O objetivo é permitir que o visitante conheça os produtos, consulte preços e origens e encontre informações sobre a empresa. Também criamos formulários de cadastro e contato.”
+
+“O público pensado para o projeto são pessoas que procuram alimentos orgânicos e querem consultar essas informações de forma simples, inclusive pelo celular.”
+
+Mostrar o protótipo e o mapa das páginas.
+“Antes da implementação, organizamos a estrutura do site neste protótipo. Dividimos o conteúdo em seis páginas: Início, Produtos, Preços, Sobre, Cadastro e Contato.”
+
+“Todas compartilham o mesmo menu e rodapé, para facilitar a navegação.”
+
+Mostrar identidade visual.
+“Usamos verde, marrom, creme e laranja para relacionar a identidade visual aos alimentos e à produção rural. Os títulos usam Poppins e os textos usam Nunito.”
+
+“As fotos estão em JPG. O logotipo e o selo usam PNG, e também temos elementos vetoriais em SVG.”
+
+Passagem:
+“Agora a Deborah vai mostrar como essa estrutura aparece no site.”
+
+2. Deborah: navegação pelo site — 3 minutos
+
+Na tela: abrir o site, já com o servidor local funcionando.
+“Na página inicial, temos a apresentação da BioVerde, alguns produtos em destaque e o áudio institucional.”
+
+Tocar alguns segundos do áudio.
+“O áudio tem controles de reprodução. A transcrição está na página Sobre, permitindo acessar o conteúdo também por texto.”
+
+Abrir Produtos. Clicar em “Frutas” e depois em “Todos”.
+“O catálogo organiza os produtos por categoria. Ao selecionar Frutas, aparecem apenas os produtos dessa categoria. O filtro muda o conteúdo visível sem abrir outra página.”
+
+Abrir Preços.
+“A tabela apresenta nome, categoria, preço, unidade e origem. Os valores são fictícios, porque este é um trabalho acadêmico.”
+
+Abrir Sobre, Cadastro e Contato, sem preencher ainda.
+“A página Sobre apresenta a história fictícia da marca, a transcrição e os produtores. As fotos são ilustrativas.”
+
+“O Cadastro permite preencher informações e conferir os dados em uma janela de confirmação. O Contato também possui validação, mas o envio é apenas uma simulação.”
+
+Diminuir a janela ou ativar a visualização de celular.
+“O layout se adapta à largura da tela. As colunas se reorganizam e o menu fica recolhido no celular.”
+
+Passagem:
+“A Letícia vai explicar como organizamos o HTML e os estilos para construir essas páginas.”
+
+3. Letícia: HTML, CSS e Bootstrap — 3 minutos
+
+Na tela: abrir index.html no editor.
+“O HTML organiza o conteúdo. Usamos elementos semânticos, como header para o cabeçalho, nav para a navegação, main para o conteúdo principal e footer para o rodapé.”
+
+“Esses elementos ajudam a identificar a função de cada parte da página.”
+
+Mostrar um trecho com row e col-md-4.
+“O Bootstrap é o único framework utilizado. Ele fornece o sistema de colunas e componentes como o menu responsivo e o modal. Essas classes ajudam a organizar o layout conforme o tamanho da tela.”
+
+Abrir css/styles.css.
+“Os estilos próprios estão concentrados neste arquivo. No início, temos as fontes locais e as variáveis de cores, que permitem reutilizar a mesma paleta.”
+
+“Também atendemos aos requisitos de seletores CSS. header.site-header combina uma tag com uma classe. .card-produto .preco seleciona o preço dentro do card.”
+
+“A pseudoclasse :hover aplica um estilo ao passar o mouse. Já :nth-child(even) permite diferenciar as linhas pares da tabela.”
+
+“Os pseudoelementos incluem ::after, usado no sublinhado do menu, e ::first-letter, que estiliza a primeira letra de alguns títulos.”
+
+Mostrar uma regra @media.
+“As media queries ajustam os estilos conforme a largura da tela. Também incluímos Bootstrap e fontes dentro do projeto, permitindo apresentar sem depender da internet.”
+
+Passagem:
+“A Victoria vai mostrar as interações feitas com JavaScript e o carregamento da tabela.”
+
+4. Victoria: JavaScript, formulário e AJAX — 3 minutos
+
+Na tela: abrir Cadastro e clicar em Enviar com os campos vazios.
+“As interações ficam em js/scripts.js. No cadastro, o JavaScript verifica os campos e mostra mensagens quando alguma informação está incorreta ou faltando.”
+
+“O formulário possui nove tipos de input, além de select e textarea. Entre as verificações estão nome, e-mail, telefone, senha, idade e escolhas obrigatórias.”
+
+Preencher com dados fictícios preparados durante o ensaio e enviar.
+“Quando os dados estão válidos, abrimos um modal do Bootstrap para conferência. A senha não aparece nessa confirmação.”
+
+“O projeto não possui backend nem banco de dados. Portanto, os dados não são enviados nem armazenados.”
+
+Abrir js/scripts.js, na função iniciarTabela(), e depois tabela.json.
+“A tabela usa AJAX por meio da função Fetch. Ao abrir a página, o JavaScript busca o arquivo tabela.json, lê os produtos e monta as linhas da tabela.”
+
+“JSON é um formato de dados. Aqui, cada produto possui nome, categoria, preço, unidade e origem.”
+
+“Se o carregamento falhar, o site mantém os preços de referência escritos no HTML e mostra um aviso.”
+
+Apontar os nomes do arquivo e da referência no HTML.
+“Durante os testes, encontramos um problema no nome do arquivo JavaScript: as páginas buscavam scripts.js, mas o arquivo estava como script.js. Corrigir esse caminho fez as interações voltarem a funcionar.”
+
+“Testamos as seis páginas em três larguras de tela, além dos filtros, formulários, áudio e carregamento da tabela. Obrigada! Podemos responder às perguntas.”
+
 Ensaiem: formulário vazio, formulário válido, modal, limpar, filtro de frutas e menu no celular. Todos devem saber abrir o servidor e localizar os arquivos. Falem para os colegas da turma.
 
 ## Entrega e presença
