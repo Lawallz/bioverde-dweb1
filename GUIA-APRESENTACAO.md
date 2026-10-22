@@ -64,10 +64,11 @@ Na aba Network do navegador, a página de preços deve mostrar `scripts.js` e `t
 
 ## Roteiro de até 15 minutos
 
-1. Documento (3 min): objetivo, público, protótipo, mapa, cores e fontes.
-2. Site (4 min): seis páginas, áudio, filtro e tabela.
-3. Código (5 min): semântica, seletores CSS, responsividade, validação, modal e Fetch.
-4. Perguntas (3 min).
+1. Alexander (3 min): documento, objetivo, público, protótipo, mapa, cores e fontes.
+2. Deborah (3 min): navegação pelo site, áudio, filtro, tabela e responsividade.
+3. Letícia (3 min): HTML semântico, CSS e Bootstrap.
+4. Victoria (3 min): JavaScript, validação, modal e AJAX.
+5. Perguntas (3 min).
 
 1. Alexander: apresentação e documento — 3 minutos
 
@@ -171,4 +172,4 @@ Ensaiem: formulário vazio, formulário válido, modal, limpar, filtro de frutas
 
 Intermediária: 22/10/2026 até 23:59. Final: 18/11/2026 até 23:59. Apresentação: 19/11/2026, a partir das 19h. Um integrante envia ZIP/RAR com uma pasta completa e PDF no Moodle, até 10 MB. GitHub não substitui a entrega. O prefixo do arquivo é ProjetoIntDWE1 ou ProjetoFinalDWE1, com os nomes em ordem alfabética.
 
-O enunciado prevê três integrantes; a capa recebida contém quatro. Confirmem essa composição com o professor. A ausência reduz a nota à metade; atraso desconta 3 pontos; perder a ordem desconta 1 ponto. Sem entrega final no Moodle no prazo, a nota do projeto é zero.
+O grupo está confirmado com quatro integrantes: Alexander, Deborah, Letícia e Victoria. Todos participam da apresentação, conforme o roteiro acima. A ausência reduz a nota à metade; atraso desconta 3 pontos; perder a ordem desconta 1 ponto. Sem entrega final no Moodle no prazo, a nota do projeto é zero.
