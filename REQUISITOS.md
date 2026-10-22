@@ -32,9 +32,12 @@ Os IDs dos formulários, modal, dados de confirmação, botões, lista de produt
 
 Nenhuma das 16 fotos esperadas está faltando. O arquivo recebido como `produtora-ana.jfif` já corresponde a `img/produtor-ana.jpg`. Logo e selo seguem ilustrativos. Os JPGs recebidos foram preservados; descrições e enquadramento foram ajustados nas páginas. A transcrição foi sincronizada com a saudação real. Os arquivos de áudio já estavam no repositório e foram mantidos.
 
+## Integrantes
+
+Grupo confirmado com quatro integrantes: Alexander Felipe Duarte Narcizo, Deborah Crystine Ramallo Guimarães, Letícia Oliveira de Jesus e Victoria Lima dos Santos. Os quatro nomes estão mantidos na capa.
+
 ## Pendências de entrega
 
-- O enunciado prevê três integrantes, mas a capa lista quatro. Confirmar com o professor, sem excluir nomes por conta própria.
 - Enviar o arquivo compactado no Moodle dentro do prazo. Link do GitHub não é aceito como entrega.
 - Ensaiar no computador e nos alto-falantes que serão usados no campus.
 - O conteúdo comercial é fictício. As imagens não comprovam variedades, certificação orgânica ou identidade dos produtores.
