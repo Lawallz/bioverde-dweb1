@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- BioVerde Organics - index.html
+     Finalidade: Home Page (hero, destaques, benefícios, depoimentos, áudio institucional) -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BioVerde Organics: frutas, verduras, legumes e grãos orgânicos entregues na sua casa.">
+  <title>BioVerde Organics | Início</title>
+  <!-- Bootstrap 5 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fontes: Poppins (títulos) e Nunito (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg container" aria-label="Navegação principal">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="img/logo.png" alt="Logotipo da BioVerde Organics" width="40" height="40">
+        <strong>BioVerde</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul id="menu" class="navbar-nav collapse navbar-collapse justify-content-end">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+        <li class="nav-item"><a class="nav-link" href="tabela-precos.html">Preços</a></li>
+        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <article class="container anima">
+        <p class="selo-organico">100% Orgânico</p>
+        <h1>Do campo para a sua mesa, sem agrotóxicos</h1>
+        <p class="lead">Alimentos frescos, colhidos de pequenos produtores e entregues toda semana na sua casa.</p>
+        <a class="btn-cta btn btn-lg" href="produtos.html">Ver produtos</a>
+      </article>
+    </section>
+
+    <section class="destaque container py-5">
+      <h2 class="mb-4">Destaques da semana</h2>
+      <ul class="row g-4 list-unstyled">
+        <li class="col-sm-6 col-lg-3">
+          <article class="card-produto">
+            <img src="img/morango.jpg" alt="Morangos inteiros e um morango cortado ao meio" width="452" height="678" decoding="async" loading="lazy">
+            <section class="p-3">
+              <span class="badge badge-cat">Frutas</span>
+              <h3 class="mt-2">Morango</h3>
+              <p class="preco mb-0">R$ 12,90 <small>/ bandeja</small></p>
+            </section>
+          </article>
+        </li>
+        <li class="col-sm-6 col-lg-3">
+          <article class="card-produto">
+            <img class="foto-inteira" src="img/alface.jpg" alt="Folhas de alface crespa sobre fundo branco" width="900" height="900" decoding="async" loading="lazy">
+            <section class="p-3">
+              <span class="badge badge-cat">Verduras</span>
+              <h3 class="mt-2">Alface crespa</h3>
+              <p class="preco mb-0">R$ 4,50 <small>/ maço</small></p>
+            </section>
+          </article>
+        </li>
+        <li class="col-sm-6 col-lg-3">
+          <article class="card-produto">
+            <img src="img/cenoura.jpg" alt="Cenouras inteiras com folhas verdes" width="600" height="495" decoding="async" loading="lazy">
+            <section class="p-3">
+              <span class="badge badge-cat">Legumes</span>
+              <h3 class="mt-2">Cenoura</h3>
+              <p class="preco mb-0">R$ 7,90 <small>/ kg</small></p>
+            </section>
+          </article>
+        </li>
+        <li class="col-sm-6 col-lg-3">
+          <article class="card-produto">
+            <img class="foto-inteira" src="img/queijo.jpg" alt="Peça de queijo com casca sobre uma tábua, acompanhada de pedaços de queijo" width="447" height="447" decoding="async" loading="lazy">
+            <section class="p-3">
+              <span class="badge badge-cat">Laticínios</span>
+              <h3 class="mt-2">Queijo minas</h3>
+              <p class="preco mb-0">R$ 34,00 <small>/ peça</small></p>
+            </section>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section class="destaque container py-5">
+      <h2 class="mb-4">Por que escolher a BioVerde?</h2>
+      <ul class="row g-4 list-unstyled">
+        <li class="col-md-4">
+          <article>
+            <h3>Sem agrotóxicos</h3>
+            <p>Todos os produtores parceiros seguem as regras da produção orgânica certificada.</p>
+          </article>
+        </li>
+        <li class="col-md-4">
+          <article>
+            <h3>Colheita fresca</h3>
+            <p>Os alimentos são colhidos no máximo dois dias antes da entrega.</p>
+          </article>
+        </li>
+        <li class="col-md-4">
+          <article>
+            <h3>Preço justo</h3>
+            <p>Compramos direto de agricultores familiares, e o valor chega até eles.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section class="destaque container py-5">
+      <h2 class="mb-4">Quem já provou aprova</h2>
+      <ul class="row g-4 list-unstyled">
+        <li class="col-md-6">
+          <figure>
+            <blockquote class="blockquote">
+              <p>A alface chega crocante e com gosto de horta. Nunca mais comprei no mercado.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">Marina Souza, São Bernardo do Campo</figcaption>
+          </figure>
+        </li>
+        <li class="col-md-6">
+          <figure>
+            <blockquote class="blockquote">
+              <p>Meus filhos pedem a cenoura da BioVerde todo dia. A entrega é sempre pontual.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">Carlos Mendes, Santo André</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section class="destaque container py-5">
+      <h2 class="mb-4">Conheça a BioVerde</h2>
+      <figure>
+        <audio controls preload="metadata">
+          <source src="media/institucional.mp3" type="audio/mpeg">
+          <source src="media/institucional.ogg" type="audio/ogg">
+          Seu navegador não suporta áudio. O texto do áudio institucional está na página Sobre.
+        </audio>
+        <figcaption>Áudio institucional: uma saudação da BioVerde em cerca de 13 segundos.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <section class="container">
+      <section class="row g-4">
+        <article class="col-md-4">
+          <h2>BioVerde Organics</h2>
+          <p>Alimentos orgânicos direto de produtores parceiros. Projeto acadêmico fictício - IFSP, DWE1.</p>
+        </article>
+        <nav class="col-md-4" aria-label="Links do rodapé">
+          <h2>Páginas</h2>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="tabela-precos.html">Preços</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+        <address class="col-md-4">
+          <h2>Fale conosco</h2>
+          <p>contato@bioverde.example<br>(11) 4000-0000</p>
+          <ul class="list-unstyled d-flex gap-3">
+            <li>
+              <a href="#" aria-label="Instagram da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook da BioVerde">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.8.2-1.2 1.3-1.2H17V2h-2.7C11.4 2 10 3.6 10 6v2H8v3.3h2V22h4v-10.7h2.6L17 8h-3z"/></svg>
+              </a>
+            </li>
+          </ul>
+        </address>
+      </section>
+      <p class="text-center mb-0"><small>&copy; 2026 BioVerde Organics. Trabalho acadêmico, sem fins comerciais.</small></p>
+    </section>
+  </footer>
+
+  <button id="btn-topo" type="button" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>

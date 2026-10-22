@@ -1,0 +1,235 @@
+/* ==========================================================
+   BioVerde Organics - styles.css
+   Finalidade: único arquivo de CSS customizado do site
+   (complementa o Bootstrap 5). Disciplina DWE1 - IFSP.
+   Ordem: variáveis > base > tipografia > navbar > hero >
+          cards > tabela > formulário > footer > animações >
+          media queries
+   ========================================================== */
+
+/* ---------- 1. VARIÁVEIS (paleta e medidas) ---------- */
+:root {
+  --verde-folha: #2E7D32;   /* cor principal */
+  --verde-claro: #A5D6A7;   /* fundos suaves, bordas */
+  --terra: #6D4C41;         /* textos de apoio, títulos */
+  --creme: #FFF8E1;         /* fundo geral */
+  --cenoura: #C25700;       /* destaque / botões CTA (escurecido p/ contraste ~4,5:1 com branco) */
+  --texto: #2b2b2b;
+  --raio: 1rem;
+  --sombra: 0 4px 14px rgba(46, 125, 50, .15);
+}
+
+/* ---------- 2. RESET / BASE ---------- */
+* { box-sizing: border-box; }                       /* 1 */
+html { scroll-behavior: smooth; }                   /* 2 */
+body {                                              /* 3 */
+  margin: 0;
+  background: var(--creme);
+  color: var(--texto);
+  font-family: "Nunito", "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+img { max-width: 100%; height: auto; }              /* 4 */
+::selection { background: var(--cenoura); color: #fff; }   /* pseudoelemento */
+::-webkit-scrollbar { width: .7rem; }               /* 5 */
+::-webkit-scrollbar-thumb { background: var(--verde-folha); border-radius: 1rem; }
+
+/* ---------- 3. TIPOGRAFIA (tamanhos em rem) ---------- */
+h1, h2, h3, h4, h5, h6 {                            /* 6 */
+  font-family: "Poppins", sans-serif;
+  color: var(--terra);
+  line-height: 1.2;
+}
+h1 { font-size: 2.5rem; }                           /* 7 */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+p, li, td, label { font-size: 1rem; }               /* 8 */
+small, caption { font-size: .875rem; }              /* 9 */
+a { color: var(--verde-folha); }                    /* 10 */
+a:hover { color: var(--cenoura); }                  /* pseudoclasse */
+section.destaque h2::first-letter {                 /* composto + pseudoelemento */
+  color: var(--cenoura);
+}
+
+/* ---------- 4. NAVBAR (sticky + sublinhado animado) ---------- */
+header.site-header {                                /* 11 */
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: #fff;
+  box-shadow: var(--sombra);
+}
+nav .nav-link {                                     /* composto */
+  position: relative;
+  font-weight: 600;
+  color: var(--terra);
+}
+nav .nav-link::after {                              /* pseudoelemento: sublinhado */
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 3px;
+  background: var(--cenoura);
+  transition: width .3s ease;
+}
+nav .nav-link:hover::after,
+nav .nav-link.active::after { width: 100%; }        /* pseudoclasse */
+
+/* ---------- 5. HERO ---------- */
+section.hero {                                      /* 12 */
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background:
+    linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)),
+    url("../img/hero.jpg") center / cover no-repeat;
+}
+section.hero h1 { color: #fff; font-size: clamp(2rem, 6vw, 3.5rem); }  /* 13 */
+.btn-cta {                                          /* 14 */
+  background: var(--cenoura);
+  color: #fff;
+  border: 0;
+  border-radius: 2rem;
+  padding: .75rem 2rem;
+  font-weight: 700;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-cta:hover { transform: translateY(-3px); box-shadow: var(--sombra); color: #fff; }
+.btn-cta:active { transform: translateY(0); }       /* 15 */
+.selo-organico {                                    /* 16 */
+  display: inline-block;
+  padding: .3rem 1rem;
+  background: #fff;
+  color: var(--verde-folha);
+  border: 2px solid var(--verde-folha);
+  border-radius: 2rem;
+  font-weight: 700;
+}
+.selo-organico::before { content: "🌿 "; }          /* pseudoelemento */
+
+/* ---------- 6. CARDS DE PRODUTO ---------- */
+article.card-produto {                              /* 17 */
+  height: 100%;
+  background: #fff;
+  border: 0;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+}
+article.card-produto:hover {                        /* 18 */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(46,125,50,.25);
+}
+.card-produto img {                                 /* 19 */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  transition: transform .4s;
+}
+.card-produto:hover img { transform: scale(1.06); } /* 20 */
+.card-produto .preco {                              /* composto */
+  color: var(--cenoura);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.card-produto h3 { font-size: 1.15rem; }            /* 21 */
+.card-produto .badge-cat {                          /* 22 */
+  background: var(--verde-claro);
+  color: var(--verde-folha);
+}
+.filtro-categorias .btn.ativo {                     /* 23 */
+  background: var(--verde-folha);
+  color: #fff;
+}
+section + section { border-top: 1px solid var(--verde-claro); }  /* 24 divisor */
+
+/* ---------- 7. TABELA ---------- */
+.tabela-wrap { overflow-x: auto; }                  /* 25 rolagem no mobile */
+table.tabela-precos {                               /* 26 */
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+table.tabela-precos thead th {                      /* 27 */
+  background: var(--verde-folha);
+  color: #fff;
+  padding: .75rem;
+  font-size: .95rem;
+}
+table.tabela-precos td { padding: .65rem .75rem; }  /* 28 */
+table.tabela-precos tbody tr:nth-child(even) { background: #f1f8e9; }  /* zebra */
+table.tabela-precos tbody tr:hover { background: var(--verde-claro); } /* 29 */
+table.tabela-precos caption {                       /* 30 */
+  caption-side: top;
+  color: var(--terra);
+  font-weight: 700;
+  padding: .5rem 0;
+}
+
+/* ---------- 8. FORMULÁRIO ---------- */
+form.form-bio label { font-weight: 700; color: var(--terra); }   /* 31 */
+form.form-bio .form-control:focus,
+form.form-bio .form-select:focus {                  /* 32 */
+  border-color: var(--verde-folha);
+  box-shadow: 0 0 0 .25rem rgba(46,125,50,.25);     /* brilho verde */
+}
+form.form-bio ::placeholder { color: #8d8d8d; font-style: italic; }  /* 33 */
+form.form-bio input[type="range"] { accent-color: var(--verde-folha); }  /* 34 */
+form.form-bio .form-check-input:checked {           /* 35 */
+  background-color: var(--verde-folha);
+  border-color: var(--verde-folha);
+}
+.invalid-feedback { font-size: .85rem; }            /* 36 */
+#btn-topo {                                         /* 37 voltar ao topo */
+  position: fixed;
+  right: 1rem; bottom: 1rem;
+  display: none;
+  background: var(--cenoura);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  width: 3rem; height: 3rem;
+}
+#btn-topo.visivel { display: block; }               /* 38 */
+
+/* ---------- 9. FOOTER (3 colunas via Bootstrap) ---------- */
+footer.site-footer {                                /* 39 */
+  background: var(--terra);
+  color: var(--creme);
+  padding: 2.5rem 0 1rem;
+}
+footer.site-footer a { color: var(--verde-claro); text-decoration: none; }  /* 40 */
+footer.site-footer a:hover { color: #fff; text-decoration: underline; }
+footer.site-footer h2 { color: #fff; font-size: 1.1rem; }   /* 41 */
+footer.site-footer svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }  /* 42 */
+
+/* ---------- 10. ANIMAÇÕES ---------- */
+@keyframes subir {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anima { animation: subir .7s ease both; }          /* 43 */
+@media (prefers-reduced-motion: reduce) {           /* acessibilidade */
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- 11. MEDIA QUERIES (mobile-first) ---------- */
+@media (min-width: 768px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+}
+@media (min-width: 992px) {
+  section.hero { min-height: 80vh; }
+  h1 { font-size: 3.5rem; }
+}
+
+/* Fotos reais: altura previsível, sem cortar pessoas ou embalagens. */
+.card-produto img { display:block; height:auto; object-position:center; }
+.card-produto img.foto-inteira { object-fit:contain; background:#fff; }
+.card-produto:hover img.foto-inteira { transform:none; }
+audio { width:min(100%,420px); }
