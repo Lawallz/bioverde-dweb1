@@ -1,17 +1,9 @@
-/* ==========================================================
-   BioVerde Organics - scripts.js
-   Finalidade: único arquivo de JavaScript do site.
-   Contém: voltar ao topo, filtro de categorias, máscara de
-   telefone, validação dos formulários (cadastro e contato)
-   e tabela de preços carregada do tabela.json por AJAX.
-   Como cada página só tem alguns elementos, cada bloco
-   confere se o elemento existe antes de usá-lo.
-   ========================================================== */
+/* Interações das seis páginas. Cada função verifica se o elemento existe. */
 
 /* Atalho: pega um elemento pelo id */
 const $ = (id) => document.getElementById(id);
 
-/* ---------- 1. BOTÃO "VOLTAR AO TOPO" ---------- */
+/* Botão "voltar ao topo" */
 function iniciarVoltarAoTopo() {
   const botao = $("btn-topo");
   if (!botao) return;
@@ -27,7 +19,7 @@ function iniciarVoltarAoTopo() {
   });
 }
 
-/* ---------- 2. FILTRO DE CATEGORIAS (produtos.html) ---------- */
+/* Filtro de categorias (produtos.html) */
 function iniciarFiltro() {
   const botoes = document.querySelectorAll("[data-filtro]");
   const itens = document.querySelectorAll("#lista-produtos [data-categoria]");
@@ -50,7 +42,7 @@ function iniciarFiltro() {
   });
 }
 
-/* ---------- 3. MÁSCARA DE TELEFONE ---------- */
+/* Máscara de telefone */
 // Transforma "11912345678" em "(11) 91234-5678"
 function aplicarMascaraTelefone(valor) {
   const d = valor.replace(/\D/g, "").slice(0, 11); // só números, máx. 11
@@ -69,15 +61,12 @@ function iniciarMascara() {
   });
 }
 
-/* ---------- 4. FUNÇÕES DE VALIDAÇÃO ----------
-   Cada função recebe um valor e devolve:
-   - texto vazio ("") se estiver tudo certo
-   - uma mensagem de erro se estiver errado            */
+/* Validação: texto vazio significa campo válido. */
 
 function validarNome(valor) {
   const nome = valor.trim();
-  if (nome.length < 3) return "Informe pelo menos 3 letras.";
-  if (!/^[A-Za-zÀ-ÿ' ]+$/.test(nome)) return "Use apenas letras e espaços.";
+  if ((nome.match(/\p{L}/gu) || []).length < 3) return "Informe pelo menos 3 letras.";
+  if (!/^[\p{L}' -]+$/u.test(nome)) return "Use apenas letras e espaços.";
   return "";
 }
 
@@ -105,6 +94,7 @@ function validarNascimento(valor) {
   if (valor === "") return "Informe a data de nascimento.";
   const nasc = new Date(valor + "T00:00:00");
   const hoje = new Date();
+  if (Number.isNaN(nasc.getTime())) return "Informe uma data válida.";
   if (nasc > hoje) return "A data não pode estar no futuro.";
   // Calcula a idade completa
   let idade = hoje.getFullYear() - nasc.getFullYear();
@@ -126,11 +116,7 @@ function validarObrigatorio(valor, mensagem) {
   return valor.trim() === "" ? mensagem : "";
 }
 
-/* ---------- 5. MOTOR DE VALIDAÇÃO ----------
-   Cada "regra" é um objeto: { campo, erro, validar }
-   - campo:   elemento que recebe is-invalid / is-valid
-   - erro:    id do <small class="invalid-feedback">
-   - validar: função que devolve "" (ok) ou a mensagem  */
+/* Aplica e limpa as mensagens de erro. */
 
 function validarRegra(regra) {
   const mensagem = regra.validar();
@@ -138,7 +124,8 @@ function validarRegra(regra) {
   const ehGrupo = regra.campo.tagName === "FIELDSET";
 
   area.textContent = mensagem;
-  area.style.display = mensagem ? "block" : "none"; // mostra/esconde a mensagem
+  area.classList.toggle("visivel", mensagem !== "");
+  regra.campo.setAttribute("aria-invalid", String(mensagem !== ""));
   regra.campo.classList.toggle("is-invalid", mensagem !== "");
   if (!ehGrupo) regra.campo.classList.toggle("is-valid", mensagem === "");
   return mensagem === "";
@@ -148,7 +135,8 @@ function limparRegras(regras) {
   regras.forEach((r) => {
     const area = $(r.erro);
     area.textContent = "";
-    area.style.display = "none";
+    area.classList.remove("visivel");
+    r.campo.removeAttribute("aria-invalid");
     r.campo.classList.remove("is-invalid", "is-valid");
   });
 }
@@ -193,7 +181,7 @@ function ligarFormulario(form, regras, aoSucesso) {
   });
 }
 
-/* ---------- 6. FORMULÁRIO DE CADASTRO ---------- */
+/* Formulário de cadastro */
 function iniciarCadastro() {
   const form = $("form-cadastro");
   if (!form) return;
@@ -277,7 +265,7 @@ function mostrarConfirmacao(form) {
   bootstrap.Modal.getOrCreateInstance($("modal-confirmacao")).show();
 }
 
-/* ---------- 7. FORMULÁRIO DE CONTATO ---------- */
+/* Formulário de contato */
 function iniciarContato() {
   const form = $("form-contato");
   if (!form) return;
@@ -300,21 +288,7 @@ function iniciarContato() {
   });
 }
 
-/* ---------- 8. TABELA DE PREÇOS POR AJAX (tabela-precos.html) ---------- */
-// Escreve uma única linha de aviso dentro do tbody (carregando ou erro)
-function mostrarAvisoTabela(tbody, texto, ehErro) {
-  const tr = document.createElement("tr");
-  const td = document.createElement("td");
-  td.colSpan = 5;
-  td.textContent = texto;
-  if (ehErro) {
-    td.classList.add("text-danger");
-    td.setAttribute("role", "alert");
-  }
-  tr.append(td);
-  tbody.replaceChildren(tr);
-}
-
+/* Tabela de preços por ajax (tabela-precos.html) */
 // Cria uma linha da tabela a partir de um registro do JSON
 function criarLinhaProduto(produto) {
   const tr = document.createElement("tr");
@@ -340,27 +314,28 @@ async function iniciarTabela() {
   const tbody = $("tabela-produtos");
   if (!tbody) return; // nas outras páginas não faz nada
 
-  mostrarAvisoTabela(tbody, "Carregando preços...", false);
+  const status = $("status-tabela");
+  status.textContent = "Atualizando preços...";
 
   try {
     const resposta = await fetch("tabela.json");
     if (!resposta.ok) throw new Error("HTTP " + resposta.status);
 
     const produtos = await resposta.json();
-    if (!Array.isArray(produtos) || produtos.length === 0) throw new Error("JSON vazio ou inválido");
+    if (!Array.isArray(produtos) || produtos.length === 0 || !produtos.every((p) =>
+      p && [p.nome, p.categoria, p.unidade, p.origem].every((v) => typeof v === "string" && v.trim()) &&
+      typeof p.preco === "number" && Number.isFinite(p.preco) && p.preco >= 0
+    )) throw new Error("JSON vazio ou inválido");
 
     tbody.replaceChildren(...produtos.map(criarLinhaProduto));
+    status.textContent = "Preços carregados.";
   } catch (erro) {
-    console.error("Falha ao carregar tabela.json:", erro);
-    mostrarAvisoTabela(
-      tbody,
-      "Não foi possível carregar a tabela de preços agora. Tente atualizar a página em alguns instantes.",
-      true
-    );
+    // Preserva os preços escritos no HTML se o JSON não puder ser lido.
+    status.textContent = "Não foi possível atualizar. Exibindo os preços de referência de outubro de 2026.";
   }
 }
 
-/* ---------- 9. INICIALIZAÇÃO ---------- */
+/* Inicialização */
 // O script usa "defer": roda depois que o HTML foi lido.
 iniciarVoltarAoTopo();
 iniciarFiltro();
